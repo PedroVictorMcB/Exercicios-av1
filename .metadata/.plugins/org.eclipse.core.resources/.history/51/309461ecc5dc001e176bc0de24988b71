@@ -1,0 +1,19 @@
+package exerciciosSala;
+
+import java.util.Vector;
+
+public class AvengersList {
+
+	private int limit;
+	Vector<String> vect;
+	
+	public AvengersList(int limit) {
+		if(limit > 0) {
+			this.limit = limit;
+		} else {
+			this.limit = 1;
+		}
+		
+		vect = new Vector<String>(this.limit);
+	}
+}
