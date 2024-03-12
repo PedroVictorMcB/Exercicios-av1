@@ -12,6 +12,7 @@ public class FatorialSimples {
 		
 	}
 	
+//	while recursivo
 	public static int filtrarN(Scanner sc) {
 //        System.out.print("Digite um valor para N: ");
         int n = obterN(sc);
@@ -38,6 +39,7 @@ public class FatorialSimples {
         return n > 0 && n < 13;
     }
     
+//    fatorial recursivo
     public static int fatorial(int n) {
     	if (n == 1) {
     		return 1;

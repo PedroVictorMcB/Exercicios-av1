@@ -23,7 +23,7 @@ public class Main {
 		}
 		
 		for(int i = 0; i< teamA.sizeOf(); i++) {
-			System.out.println(teamA.indexToFor(i));
+			System.out.println(teamA.hawkEye(i));
 		}
 		
 		sc.close();

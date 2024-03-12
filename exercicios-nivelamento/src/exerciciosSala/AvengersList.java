@@ -26,7 +26,7 @@ public class AvengersList {
 		}
 	}
 	
-	public Object indexToFor(int index) {
+	public Object hawkEye(int index) {
 		if(index < 0 || index >= size) {
 			System.out.println("out of boundrys");
 		} 
@@ -36,5 +36,10 @@ public class AvengersList {
 	
 	public int sizeOf() {
 		return size;
+	}
+	
+	public Object negan() {
+		
+		return
 	}
 }
