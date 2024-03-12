@@ -47,7 +47,7 @@ public class Figure {
 //			System.out.println("Insira um valor entre 1 e 1000");
 			return validarFig(sc);
 		} else {
-			return N;
+			return mdc(num1, num2);
 		}
 	}
 	
@@ -85,9 +85,7 @@ public class Figure {
 	//estrutura PARA
 	public static int paraNossaAlegria(int N, int i, Scanner sc) {
 		if(i < N) {
-			int Ric = validarFig(sc);
-			int Vic = validarFig(sc);
-			int mdc = mdc(Ric, Vic);
+			int mdc = validarFig(sc);
 			System.out.printf("%d\n",mdc);
 			i++;
 			return paraNossaAlegria(N, i, sc);

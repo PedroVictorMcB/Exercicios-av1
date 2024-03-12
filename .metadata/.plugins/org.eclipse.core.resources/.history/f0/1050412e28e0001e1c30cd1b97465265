@@ -10,7 +10,7 @@ public class Figure {
 		Scanner sc = new Scanner(System.in);
 		int N = 0;
 		
-		N = validarN(sc);
+		N = validarN(N, sc);
 		if (N == 0) {
 			return;
 		}
@@ -19,35 +19,33 @@ public class Figure {
 		sc.close();
 	}
 	
-	public static int validarN(Scanner sc) {
-		int N;
+	public static int validarN(int N, Scanner sc) {
 		try {
-			N = sc.nextInt();
+			N = Integer.parseInt(sc.nextLine());
 		} catch (NumberFormatException e) {
-			return validarN(sc);
+			return validarN(N, sc);
 		} finally {
 			
 		}
 		
 		if(N <= 0 || N > 3000) {
-			return validarN(sc);
+			return validarN(N, sc);
 		} else {
 			return N;
 		}
 	}
 	
 	public static int validarFig(Scanner sc) {
-//		String line = sc.nextLine();
-//		String[] nums = line.split(" ");
-//		int num1, num2;
-//		num1 = Integer.parseInt(nums[0]);
-//		num2 = Integer.parseInt(nums[1]);
-		int N = sc.nextInt();
-		if(N <= 0 || N > 1000) {
+		String line = sc.nextLine();
+		String[] nums = line.split(" ");
+		int num1, num2;
+		num1 = Integer.parseInt(nums[0]);
+		num2 = Integer.parseInt(nums[1]);
+		if(num1 <= 0 || num2 <= 0) {
 //			System.out.println("Insira um valor entre 1 e 1000");
 			return validarFig(sc);
 		} else {
-			return N;
+			return mdc(num1, num2);
 		}
 	}
 	
@@ -85,9 +83,7 @@ public class Figure {
 	//estrutura PARA
 	public static int paraNossaAlegria(int N, int i, Scanner sc) {
 		if(i < N) {
-			int Ric = validarFig(sc);
-			int Vic = validarFig(sc);
-			int mdc = mdc(Ric, Vic);
+			int mdc = validarFig(sc);
 			System.out.printf("%d\n",mdc);
 			i++;
 			return paraNossaAlegria(N, i, sc);
