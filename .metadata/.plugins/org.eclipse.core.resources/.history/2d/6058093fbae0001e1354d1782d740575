@@ -20,24 +20,26 @@ public static void main(String[] args) throws IOException {
 	public static int validarN(Scanner sc) {
 		String scText = sc.nextLine();
 		int N = Integer.parseInt(scText);
+		System.out.println(N);
+		System.out.println(scText);
 		
-		if(N > 6000) {
-			
-			return 6000;
+		if(N <= 0 || N > 3000) {
+			System.out.println("digite um valor entre 1 e 3000");
+			return validarN(sc);
 		} else {
 			return N;
 		}
 	}
 	
-//	public static int validarFig(Scanner sc) {
-//		int N = sc.nextInt();
-//		if(N <= 0 || N > 1000) {
-////			System.out.println("Insira um valor entre 1 e 1000");
-//			return validarFig(sc);
-//		} else {
-//			return N;
-//		}
-//	}
+	public static int validarFig(Scanner sc) {
+		int N = sc.nextInt();
+		if(N <= 0 || N > 1000) {
+			System.out.println("Insira um valor entre 1 e 1000");
+			return validarFig(sc);
+		} else {
+			return N;
+		}
+	}
 	
 	public static int mdc(int fig1, int fig2) {
         if (fig2 == 0) {
@@ -54,13 +56,11 @@ public static void main(String[] args) throws IOException {
 	}
 	
 	public static int paraNossaAlegria(int N, int i, Scanner sc) {
-		if(i < N && sc.hasNextLine()) {
+		if(i < N) {
 //			int Ric = Integer.parseInt(sc.nextLine());
 //			int Vic = Integer.parseInt(sc.nextLine());
-			String line = sc.nextLine();
-			String[] nums = line.split(" ");
-			int Ric = Integer.parseInt(nums[0]);
-			int Vic = Integer.parseInt(nums[1]);
+			int Ric = validarFig(sc);
+			int Vic = validarFig(sc);
 			int mdc = mdc(Ric, Vic);
 			System.out.printf("%d\n",mdc);
 			i++;

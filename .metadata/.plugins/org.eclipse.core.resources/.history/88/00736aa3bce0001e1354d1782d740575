@@ -29,7 +29,7 @@ public class Figure {
 			
 		}
 		
-		if(N <= 0 || N > 30000) {
+		if(N <= 0 || N > 10) {
 			return validarN(sc);
 		} else {
 			return N;

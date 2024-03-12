@@ -21,9 +21,9 @@ public static void main(String[] args) throws IOException {
 		String scText = sc.nextLine();
 		int N = Integer.parseInt(scText);
 		
-		if(N > 6000) {
+		if(N > 8000) {
 			
-			return 6000;
+			return 8000;
 		} else {
 			return N;
 		}
