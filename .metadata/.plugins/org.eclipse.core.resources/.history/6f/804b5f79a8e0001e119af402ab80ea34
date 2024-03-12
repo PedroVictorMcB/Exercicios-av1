@@ -47,7 +47,7 @@ public class Figure {
 //				System.out.println("Insira um valor entre 1 e 1000");
 				return validarFig(sc);
 			} else {
-				return nums;
+				return nums[0, 1];
 			}
 		} catch (Exception e) {
 			return validarFig(sc);

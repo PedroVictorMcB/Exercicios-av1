@@ -1,0 +1,37 @@
+package recursividade;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Figure1 {
+
+public static void main(String[] args) throws IOException {
+		
+		Scanner sc = new Scanner(System.in);
+		int N = 0;
+		
+		N = validarN(sc);
+		
+		sc.close();
+	}
+	
+	public static int validarN(Scanner sc) {
+		int N = Integer.parseInt(sc.nextLine());
+		
+		if(N <= 0 || N > 3000) {
+			return validarN(sc);
+		} else {
+			return N;
+		}
+	}
+	
+	public static int validarFig(Scanner sc) {
+		int N = sc.nextInt();
+		if(N <= 0 || N > 1000) {
+//			System.out.println("Insira um valor entre 1 e 1000");
+			return validarFig(sc);
+		} else {
+			return N;
+		}
+	}
+}

@@ -10,6 +10,9 @@ public class Figure {
 		Scanner sc = new Scanner(System.in);
 		int N = 0;
 		
+		System.out.println(args);
+		System.out.println(sc);
+		
 		N = validarN(sc);
 		if (N == 0) {
 			return;
@@ -29,7 +32,7 @@ public class Figure {
 			
 		}
 		
-		if(N <= 0 || N > 10) {
+		if(N <= 0 || N > 3000) {
 			return validarN(sc);
 		} else {
 			return N;
@@ -37,25 +40,18 @@ public class Figure {
 	}
 	
 	public static int validarFig(Scanner sc) {
-		int num1, num2;
-		try {
-			String line = sc.nextLine();
-			String[] nums = line.split(" ");
-			num1 = Integer.parseInt(nums[0]);
-			num2 = Integer.parseInt(nums[1]);
-			if(num1 <= 0 || num1 > 1000 || num2 <= 0 || num2 > 1000) {
-//				System.out.println("Insira um valor entre 1 e 1000");
-				return validarFig(sc);
-			} else {
-				return nums;
-			}
-		} catch (Exception e) {
+//		String line = sc.nextLine();
+//		String[] nums = line.split(" ");
+//		int num1, num2;
+//		num1 = Integer.parseInt(nums[0]);
+//		num2 = Integer.parseInt(nums[1]);
+		int N = sc.nextInt();
+		if(N <= 0 || N > 1000) {
+//			System.out.println("Insira um valor entre 1 e 1000");
 			return validarFig(sc);
-		} finally {
-			
+		} else {
+			return N;
 		}
-//		int N = sc.nextInt();
-		
 	}
 	
 //	public static int mdc(int fig1, int fig2) {

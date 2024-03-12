@@ -1,0 +1,34 @@
+package recursividade;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Figure1 {
+
+public static void main(String[] args) throws IOException {
+		
+		Scanner sc = new Scanner(System.in);
+		int N = 0;
+		
+		N = validarN(sc);
+		
+		sc.close();
+	}
+	
+	public static int validarN(Scanner sc) {
+		int N;
+		try {
+			N = sc.nextInt();
+		} catch (NumberFormatException e) {
+			return validarN(sc);
+		} finally {
+			
+		}
+		
+		if(N <= 0 || N > 3000) {
+			return validarN(sc);
+		} else {
+			return N;
+		}
+	}
+	}
