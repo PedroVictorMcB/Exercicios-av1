@@ -27,6 +27,8 @@ public class Main {
 		}
 		
 		sc.close();
+		
+		System.out.printf("Tamanho da Lista: %d", teamA.sizeOf());
 	}
 
 }

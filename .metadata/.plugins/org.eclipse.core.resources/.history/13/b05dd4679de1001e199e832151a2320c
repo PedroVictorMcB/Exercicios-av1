@@ -1,0 +1,15 @@
+package tadList;
+
+public class ListTreino {
+
+	private int size;
+	private T[] list;
+	private int i;
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+	
+}

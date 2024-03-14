@@ -1,0 +1,33 @@
+package tadList;
+
+public class ListTreino {
+
+	private int size;
+	private Object[] list;
+	
+	public static void main(String[] args) {
+		
+
+	}
+	
+	public ListTreino(int size) {
+		if(size > 0) {
+			this.size = size;
+		} else {
+			size = 0;
+		}
+		list = new Object[this.size];
+	}
+
+	public int sizeOf() {
+		return this.size;
+	}
+	
+	public Object getIndex(int index) {
+		if(index < 0 || index >= size) {
+			System.out.println("out of boundrys");
+		} 
+		
+		return list[index];
+	}
+}
