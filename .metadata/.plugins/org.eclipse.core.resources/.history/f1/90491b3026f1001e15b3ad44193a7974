@@ -1,0 +1,49 @@
+package Prova;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[]args) {
+		LinkedList list = new LinkedList();
+		Scanner sc = new Scanner(System.in);
+		String line = sc.nextLine();
+		sc.close();
+		for (int j = 0; j < line.length(); j++) {
+			int item = Character.getNumericValue(line.charAt(j));
+			list.add(item);
+		}
+		
+	}		
+}
+
+
+    	
+//    	Scanner scanner = new Scanner(System.in);
+//        
+//        while (scanner.hasNext()) {
+//            String number = scanner.next();
+//            int[] frequency = new int[10]; // Array para contar a frequência de cada dígito
+//            
+//            // Contagem da frequência de cada dígito
+//            for (int i = 0; i < number.length(); i++) {
+//                int digit = Character.getNumericValue(number.charAt(i));
+//                frequency[digit]++;
+//            }
+//            
+//            // Encontrar o dígito mais frequente
+//            int mostFrequentDigit = 0;
+//            int maxFrequency = 0;
+//            for (int i = 0; i < 10; i++) {
+//                if (frequency[i] > maxFrequency || (frequency[i] == maxFrequency && i > mostFrequentDigit)) {
+//                    mostFrequentDigit = i;
+//                    maxFrequency = frequency[i];
+//                }
+//            }
+//            
+//            System.out.println(mostFrequentDigit);
+//        }
+//        
+//        scanner.close();
+//    }
+//}

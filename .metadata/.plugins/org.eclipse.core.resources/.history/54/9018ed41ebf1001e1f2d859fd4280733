@@ -1,0 +1,10 @@
+package Prova;
+
+public class NumeroFreq {
+
+}
+
+// CRIAR MÉTODOS:
+// set
+// addAt
+// ordenação

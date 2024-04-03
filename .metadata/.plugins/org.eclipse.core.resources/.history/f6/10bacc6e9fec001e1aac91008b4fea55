@@ -1,0 +1,10 @@
+package Prova;
+
+public class NumeroFreq {
+
+}
+
+// CRIAR MÉTODOS:
+// contador
+// contains
+// get

@@ -1,0 +1,27 @@
+package Prova;
+
+import java.util.Scanner;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String[] txtList = {};
+		
+
+	}
+	
+	public String arrOpt(Scanner opcional) {
+	    return opcional;
+	}
+
+	public void arrStr(String[] list,String obrigatorio) {
+	    String opt = arrOpt(Scanner opcional);
+	    list[0] = obrigatorio;
+	    if (opt != null) {
+	    	list[1] = opt;
+	    }
+	}
+
+
+}

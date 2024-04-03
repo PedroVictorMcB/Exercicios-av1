@@ -1,9 +1,0 @@
-package exerciciosSala;
-
-import java.util.Vector;
-
-public class AvengersList {
-
-	private int size;
-	
-}

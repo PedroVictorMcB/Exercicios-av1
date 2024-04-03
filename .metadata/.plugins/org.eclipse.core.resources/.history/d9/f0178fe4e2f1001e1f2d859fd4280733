@@ -1,0 +1,20 @@
+package Prova;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public void meuMetodo(String obrigatorio, String opcional) {
+	    // Código para quando a propriedade é opcional
+	}
+
+	public void meuMetodo(String obrigatorio) {
+	    // Chama o método com um valor padrão para o argumento opcional
+	    meuMetodo(obrigatorio, "valor padrão");
+	}
+
+
+}

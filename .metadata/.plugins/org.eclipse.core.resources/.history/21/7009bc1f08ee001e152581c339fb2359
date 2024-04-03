@@ -1,0 +1,13 @@
+package Prova;
+
+public class NumeroFreq {
+
+}
+
+// CRIAR MÉTODOS:
+// length
+// contains
+// get(i)
+// remove
+// maisFrequente
+// ordenação
