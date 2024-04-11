@@ -5,10 +5,21 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[]args) {
+		LinkedList list = new LinkedList();
 		Scanner sc = new Scanner(System.in);
-		int times = 8;
-		showMostFreq(sc, times);
+		String line = sc.nextLine();
 		sc.close();
+		String[] nums = line.split(" ");
+		int K = Integer.parseInt(nums[0]);
+		int N = Integer.parseInt(nums[1]);
+		
+		
+		
+//		for (int i = 0; i < line.length(); i++) {
+//			int item = Character.getNumericValue(line.charAt(i));
+//			list.add(item);
+//		}
+		
 	}
 	
 	static void showMostFreq(Scanner sc, int times) {

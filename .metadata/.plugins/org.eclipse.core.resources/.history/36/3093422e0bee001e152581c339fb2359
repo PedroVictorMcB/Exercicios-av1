@@ -1,9 +1,0 @@
-package Prova;
-
-import java.util.Scanner;
-
-public class RaiseDecres {
-
-	Scanner sc = new Scanner(System.in);
-	ArrayList<Integer> listNum = new ArrayList<>();
-}

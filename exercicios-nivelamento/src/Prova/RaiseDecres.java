@@ -8,14 +8,18 @@ public class RaiseDecres {
 	public static void main(String[]args) {
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Integer> listNum = new ArrayList<>();
-		
-		orderedRec(sc, listNum);
-		
-		for (int i: listNum) {
-			System.out.println(i);
-		}
-		
+		int N = sc.nextInt();
 		sc.close();
+		
+		System.out.println(parImpar(N));
+		
+//		orderedRec(sc, listNum);
+//		
+//		for (int i: listNum) {
+//			System.out.println(i);
+//		}
+//		
+//		sc.close();
 		
 	}
 	
@@ -35,5 +39,19 @@ public class RaiseDecres {
 			System.out.println("Decrescente");
 		}
 		orderedRec(sc, list);
+	}
+	
+	static int parImpar(int N) {
+		
+		
+		
+		
+		while (N != 0) {
+			if (N % 2 != 0) {
+				System.out.println(N);
+			}
+			N--;	
+		}
+		return parImpar(N);
 	}
 }

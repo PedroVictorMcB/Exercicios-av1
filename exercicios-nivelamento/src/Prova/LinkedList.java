@@ -127,28 +127,21 @@ public class LinkedList {
 		setNode.value = value;
 	}
 	
+	//Resolva um problema de ordenação para competidoras com maior pontuação do campionato de
+	//escalada mundial.
+	//As atletas que tiraram maior pontuação deve ser listadas por ultimo e as atletas que tiraram
+	//menor pontuação devem ser listadas pelo início da lista de classificação para as finais.
+	
+	
 	void sort() {
-		Node menor = head;
-		
-//		3421
-		
-		for(int i = 0; i < this.length; i++) {
-			Node current = this.get(i);
-			Node prev = this.get(i - 1);
-			if(menor.value > current.value) {
-				menor = current;
-				menor.next = this.head;
-				head = menor;
-				prev.next = this.get(i);
-				
-				
-//				current.next = menor;
-//				menor = current;
-//				this.remove(i);
+		for (int i = 0; i < this.length; i++) {
+			Node tobeCompared = this.get(i);
+			
+			if (this.head.value > tobeCompared.value) {
+				this.addAt(0, tobeCompared.value);
+				this.remove(i + 1);
 			}
 		}
-		
-		this.display();
 	}
 	
 	void display() {
@@ -174,11 +167,9 @@ public class LinkedList {
 			list.add(item);
 		}
 		
-		list.display();
-		
 		list.sort();
 		
-//		System.out.println(list.getMostFreq());
+		list.display();
 		
 	}
 }
