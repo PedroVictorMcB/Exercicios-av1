@@ -134,12 +134,36 @@ public class LinkedList {
 	
 	
 	void sort() {
-		for (int i = 0; i < this.length; i++) {
-			Node tobeCompared = this.get(i);
+		for (int i = 0; i < this.length - 1; i++) {
+			Node menor;
+			Node maior;
+			Node current = this.get(i);
 			
-			if (this.head.value > tobeCompared.value) {
-				this.addAt(0, tobeCompared.value);
-				this.remove(i + 1);
+			if(current.next.value < current.value) {
+				menor = current.next;
+				if (menor.next != null) {
+					current.next = menor.next;
+				} else {
+					current.next = null;
+				}
+				if (this.head.value > menor.value) {
+					menor.next = head;
+					head = menor;
+				}
+				
+				current = this.get(i);
+			}
+			
+			if(current.next.value > current.value) {
+				maior = current.next;
+				if(maior.next != null) {
+					if(this.tail.value < maior.value){
+						current.next = maior.next;
+						this.tail.next = maior;
+						this.tail = maior;
+						this.tail.next = null;
+						}
+					}
 			}
 		}
 	}
