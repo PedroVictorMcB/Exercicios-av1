@@ -13,20 +13,20 @@ public class StackList<T> {
 	
 	void push(T value) {
 		Node<T> data = new Node<>(value);
-		if (head == null && tail == null) {
-			head = data;
-			tail = head;
+		if (this.head == null && this.tail == null) {
+			this.head = data;
+			this.tail = this.head;
 		} else {
 			Node<T> current = data;
-			tail.next = current;
-			tail = tail.next;
+			this.tail.next = current;
+			this.tail = this.tail.next;
 			
 		}
-		length++;
+		this.length++;
 	}
 	
 	T top(){
-		if (head == null) {
+		if (this.head == null) {
 			return null;
 		}
 		
