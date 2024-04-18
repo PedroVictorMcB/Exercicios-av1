@@ -5,13 +5,13 @@ public class StackList<T> {
 	Node<T> tail;
 	int length;
 	
-	StackList(){
+	public StackList(){
 		head = null;
 		tail = null;
 		length = 0;
 	}
 	
-	void push(T value) {
+	public void push(T value) {
 		Node<T> data = new Node<>(value);
 		if (this.head == null && this.tail == null) {
 			this.head = data;
@@ -19,13 +19,13 @@ public class StackList<T> {
 		} else {
 			Node<T> current = data;
 			this.tail.next = current;
-			this.tail = this.tail.next;
+			this.tail = current;
 			
 		}
 		this.length++;
 	}
 	
-	T top(){
+	public T top(){
 		if (this.head == null) {
 			return null;
 		}
@@ -33,7 +33,7 @@ public class StackList<T> {
 		return this.tail.value;
 	}
 	
-	T pop(){
+	public T pop(){
 		Node<T> popedElement = this.tail;
 		Node<T> current = this.head;
 		if (this.length == 1) {
@@ -52,11 +52,15 @@ public class StackList<T> {
 		return popedElement.value;
 	}
 	
-	boolean isEmpty() {
+	public boolean isEmpty() {
 		if (this.length == 0) {
 			return true;
 		}
 		return false;
+	}
+	
+	public int size() {
+		return this.length;
 	}
 	
 	public static void main(String[]args) {
