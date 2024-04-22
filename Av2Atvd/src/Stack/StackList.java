@@ -1,5 +1,7 @@
 package Stack;
 
+import java.util.Scanner;
+
 public class StackList<T> {
 	Node<T> head;
 	Node<T> tail;
@@ -63,23 +65,47 @@ public class StackList<T> {
 		return this.length;
 	}
 	
+	public String toString() {
+		String txtOutPut = (String) head.value.toString();
+		
+		Node<T> current = head.next;
+		while (current != null) {
+			txtOutPut += (String) current.value.toString();
+			current = current.next;
+		}
+		return txtOutPut;
+	}
+	
 	public static void main(String[]args) {
-		StackList<Integer> Stacker = new StackList<>();
+		Scanner sc = new Scanner(System.in);
 		
-		int[] nums = {10, 20, 30, 50};
+		StackList<String> express = new StackList<>();
+		int N = 100;
 		
-		for (int i = 0; i < 4; i++) {
-			Stacker.push(nums[i]);
-			System.out.println(Stacker.top() + " added to index " + i + " length: " + Stacker.length + "\n");
+		for (int counter = 0; counter < N; counter++) {
+		
+			String line = sc.nextLine();
+			
+			
+			for (int i = 0; i < line.length(); i++) {
+				String charComparison = String.valueOf(line.charAt(i));
+				
+				if (charComparison.equals("(")) {
+					express.push(")");
+				} else if (charComparison.equals(")") && express.isEmpty() == true) {
+					express.push("(");
+				} else if (charComparison.equals(")") && express.top().equals(")")) {
+					express.pop();
+				}
+			}
+			if (express.isEmpty() == true) {
+				System.out.println("correct");
+			} else if (express.isEmpty() == false) {
+				System.out.println("incorrect");
+			}
 		}
 		
-		System.out.println(Stacker.isEmpty());
+		sc.close();
 		
-		for (int i = 3; i >= 0; i--) {
-			System.out.println(Stacker.pop() + " removed from index " + i + " length: " + Stacker.length);
-			System.out.println(Stacker.top() + " new tail defined at index " + i + " length: " + Stacker.length+ "\n");
-		}
-		
-		System.out.println(Stacker.isEmpty());
 	}
 }

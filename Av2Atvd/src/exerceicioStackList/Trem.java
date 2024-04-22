@@ -82,10 +82,10 @@ public class Trem {
 			if(requestOrderArr[0].equals("0")) {
 				System.out.println("insira qtd de vagoes: ");
 				requestNumber = sc.nextInt();
-				if (requestNumber == 0) {
-					return;
+				if (requestNumber != 0) {
+					validation(sc, requestNumber);
 				}
-				validation(sc, requestNumber);
+				return;
 			}
 		}
 		
