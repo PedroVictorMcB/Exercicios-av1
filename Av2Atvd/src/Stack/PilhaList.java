@@ -1,13 +1,11 @@
 package Stack;
 
-public class StackList<T> {
+public class PilhaList<T> {
 	Node<T> head;
-	Node<T> tail;
-	int length;
+	private int length;
 	
-	public StackList(){
+	public PilhaList(){
 		head = null;
-		tail = null;
 		length = 0;
 	}
 	
@@ -15,36 +13,29 @@ public class StackList<T> {
 		Node<T> data = new Node<>(value);
 		if (this.isEmpty()) {
 			this.head = data;
-			this.tail = this.head;
 		} else {
 			Node<T> current = data;
-			this.tail.next = current;
-			this.tail = current;
+			current.next = this.head;
+			this.head = current;
 			
 		}
 		this.length++;
 	}
 	
 	public T top(){
-		if (this.head == null) {
+		if (this.isEmpty()) {
 			return null;
 		}
 		
-		return this.tail.value;
+		return this.head.value;
 	}
 	
 	public T pop(){
-		Node<T> popedElement = this.tail;
-		Node<T> current = this.head;
-		if (this.length == 1) {
-			this.head = null;
-			this.tail = null;
+		Node<T> popedElement = this.head;
+		if(this.isEmpty()) {
+			return null;
 		} else {
-			while (current != this.tail) {
-				current = current.next;
-			}
-			current.next = null;
-			this.tail = current;
+			this.head = this.head.next;
 		}
 		
 		this.length--;
@@ -53,7 +44,7 @@ public class StackList<T> {
 	}
 	
 	public boolean isEmpty() {
-		if (this.length == 0) {
+		if (this.head == null) {
 			return true;
 		}
 		return false;
@@ -63,9 +54,9 @@ public class StackList<T> {
 		return this.length;
 	}
 	
-	public StackList<T> inverse() {
-		StackList<T> inverser = new StackList<T>();
-		for(int k = 0; k < this.size(); k++) {
+	public PilhaList<T> inverse() {
+		PilhaList<T> inverser = new PilhaList<T>();
+		while(!this.isEmpty()) {
 			inverser.push(this.pop());
 		}
 		
@@ -73,9 +64,9 @@ public class StackList<T> {
 	}
 	
 	public String toString() {
-		String txtOutPut = (String) head.value.toString() + " ";
+		String txtOutPut = "";
 		
-		Node<T> current = head.next;
+		Node<T> current = this.head;
 		while (current != null) {
 			txtOutPut += (String) current.value.toString() + " ";
 			current = current.next;
